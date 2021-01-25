@@ -1,15 +1,17 @@
-package ru.cameras.web.service;
+package ru.cameras.web.service.model;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.util.UUID;
+
 @Setter @Getter
 @Accessors(chain = true)
 public class CameraDto {
     private Long id;
-    private String urlType;
+    private UrlType urlType;
     private String videoUrl;
-    private String value;
-    private Long ttl;
+    private UUID value;
+    private Integer ttl;
 }
