@@ -11,5 +11,5 @@ public class CameraRes {
     private String urlType;
     private String videoUrl;
     private String value;
-    private Integer ttl;
+    private String ttl;
 }
