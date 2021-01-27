@@ -19,7 +19,7 @@ class CamerasHandlerServiceTest {
     
     @Test
     void getListCameras_ok() {
-        String url = "http://www.mocky.io/v2/5c51b9dd3400003252129fb5";
+        String url = "https://run.mocky.io/v3/b9874418-405f-4131-84ab-be9f88c43287";
     
         CameraDto camera2 = new CameraDto()
                 .setId(20L)
@@ -30,8 +30,8 @@ class CamerasHandlerServiceTest {
         
         List<CameraDto> result = subj.getListCameras(url);
         assertNotNull(result);
-        assertEquals(4, result.size());
-        assertEquals(camera2, result.get(1));
+        assertEquals(1, result.size());
+        assertEquals(camera2, result.get(0));
     }
     
     @Test
