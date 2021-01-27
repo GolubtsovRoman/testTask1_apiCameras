@@ -17,9 +17,9 @@ import java.util.concurrent.BlockingQueue;
 public class CamerasHandlerService {
     
     public List<CameraDto> getListCameras(String url) {
-        List<CameraSrcDto> cameraDtoList;
+        List<CameraSrcDto> cameraSrsDtoList;
         try {
-            cameraDtoList = new ObjectMapper().readValue(
+            cameraSrsDtoList = new ObjectMapper().readValue(
                     new URL(url),
                     new TypeReference<List<CameraSrcDto>>() { }
             );
@@ -27,17 +27,17 @@ public class CamerasHandlerService {
             return null;
         }
         
-        return new LinkedList<>(getResultQueue(cameraDtoList));
+        return new LinkedList<>(getResultQueue(cameraSrsDtoList));
     }
     
-    private BlockingQueue<CameraDto> getResultQueue(List<CameraSrcDto> cameraDtoList) {
+    private BlockingQueue<CameraDto> getResultQueue(List<CameraSrcDto> cameraSrsDtoList) {
         BlockingQueue<CameraSrcDto> cameraSrcDtoBlockingQueue = new ArrayBlockingQueue<>(
-                cameraDtoList.size(),
+                cameraSrsDtoList.size(),
                 true,
-                cameraDtoList
+                cameraSrsDtoList
         );
         BlockingQueue<CameraDto> cameraDtoBlockingQueue = new ArrayBlockingQueue<>(
-                cameraDtoList.size(),
+                cameraSrsDtoList.size(),
                 true
         );
         
