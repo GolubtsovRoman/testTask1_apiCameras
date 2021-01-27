@@ -35,6 +35,7 @@ public class CamerasController {
         
         List<CameraRes> cameraResList = cameraDtoList.stream()
                 .map(this::convertToCameraRes)
+                .sorted()
                 .collect(Collectors.toList());
         
         return ok(cameraResList);
